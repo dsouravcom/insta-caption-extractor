@@ -73,10 +73,9 @@ function App() {
           isDarkMode ? "text-white bg-gray-800" : "text-black bg-slate-50"
         }`}
       >
-        <div className="flex flex-col-reverse items-end   pr-4">
-
+        <div className="flex flex-col-reverse items-end pr-4">
           <button
-            className="p-1 mt-2 bg-slate-300 rounded-md w-fit "
+            className="p-1 mt-2 bg-slate-300 rounded-md w-7"
             onClick={toggleTheme}
           >
             {isDarkMode ? (
@@ -120,8 +119,16 @@ function App() {
           </button>
         </form>
         <form onSubmit={onCopy}>
-          <div className="flex flex-col justify-center mt-10 md:mt-4">
-            <span className="text-center mb-3">Caption 👇</span>
+          <div className="flex flex-col justify-center pb-4 mt-10 md:mt-4">
+            <div className="flex justify-between px-4 sm:px-10 lg:px-40">
+              <span className="text-center">Caption 👇</span>
+              <button
+                type="submit"
+                className="w-max mb-3 bg-blue-600 text-white border-2 rounded border-gray-400 px-2 py-1 hover:bg-blue-700"
+              >
+                Copy
+              </button>
+            </div>
             <textarea
               cols="30"
               rows="17"
@@ -131,14 +138,14 @@ function App() {
               className="bg-gray-300 border-4 p-2 rounded-lg border-gray-500 text-black sm:mx-8 lg:mx-40"
             ></textarea>
           </div>
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <button
               type="submit"
               className="w-max mt-2 bg-blue-600 text-white border-2 rounded border-gray-400 px-2 py-1 hover:bg-blue-700"
             >
               Copy
             </button>
-          </div>
+          </div> */}
         </form>
       </div>
     </>
