@@ -10,25 +10,34 @@ function Home() {
 
   const onSearch = async (e) => {
     e.preventDefault();
-    const res = await axios.post(
-      `${import.meta.env.VITE_APP_BACKEND_URL}?url=${url}`
-    );
-    if (res.status == 200) {
-      const string = res.data.result;
-      const result = string.slice(2, string.length - 1);
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_APP_BACKEND_URL}?url=${url}`
+      );
+      if (res.status == 200) {
+        const string = res.data.result;
+        const result = string.slice(2, string.length - 1);
 
-      setCaption(result);
-    } else {
+        setCaption(result);
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong please try again later!",
+        });
+        console.log(res);
+      }
+    } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "Something went wrong please try again later!",
       });
-      console.log(res);
+      console.log(error);
     }
   };
 
-  const onCopy = async (e) => {
+  const onCopy = (e) => {
     e.preventDefault();
     navigator.clipboard
       .writeText(caption)
