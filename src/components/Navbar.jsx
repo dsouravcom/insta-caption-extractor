@@ -52,10 +52,10 @@ const Navbar = () => {
               <FontAwesomeIcon icon={theme === "light" ? faMoon : faSun} />
             </button>
           </div>
-          <div className="flex md:hidden mt-2">
+          <div className="flex md:hidden">
             <button
               onClick={toggleMenu}
-              className="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white px-6 rounded-md text-xl font-medium"
+              className="text-xl font-medium"
             >
               <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
             </button>
