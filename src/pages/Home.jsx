@@ -6,11 +6,13 @@ import { ThemeContext } from "../context/ThemeContext";
 function Home() {
   const [url, setUrl] = useState("");
   const [caption, setCaption] = useState("");
+  const [loading, setLoading] = useState(false);
   const { theme } = useContext(ThemeContext);
 
   const onSearch = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const res = await axios.post(
         `${import.meta.env.VITE_APP_BACKEND_URL}?url=${url}`
       );
@@ -34,6 +36,8 @@ function Home() {
         text: "Something went wrong please try again later!",
       });
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -95,7 +99,7 @@ function Home() {
             type="submit"
             className="w-max mt-8 md:mt-4 bg-blue-500 text-white border-2 rounded border-gray-400 px-2 py-1 hover:bg-blue-700"
           >
-            Search
+            {loading ? "Searching..." : "Get caption"}
           </button>
         </form>
         <form onSubmit={onCopy}>
