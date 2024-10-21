@@ -9,6 +9,8 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
 
+import CoffeeLogo from "../assets/coffee.png";
+
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,11 +34,17 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="hidden md:ml-6 md:flex md:space-x-8 ml-4">
-              <Link to={"/"} className="px-3 py-2 rounded-md text-sm font-medium">
+              <Link
+                to={"/"}
+                className="px-3 py-2 rounded-md text-sm font-medium"
+              >
                 Home
               </Link>
-              <Link to={"/support"} className="px-3 py-2 rounded-md text-sm font-medium">
-              Support This Website
+              <Link
+                to={"/support"}
+                className="px-3 py-2 rounded-md text-sm font-medium flex gap-3 border"
+              >
+                Support This Website <img src={CoffeeLogo} alt="support" />
               </Link>
             </div>
           </div>
@@ -53,10 +61,7 @@ const Navbar = () => {
             </button>
           </div>
           <div className="flex md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-xl font-medium"
-            >
+            <button onClick={toggleMenu} className="text-xl font-medium">
               <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
             </button>
           </div>
@@ -71,9 +76,9 @@ const Navbar = () => {
             </Link>
             <Link
               to={"/support"}
-              className="block px-3 py-2 rounded-md text-sm font-medium"
+              className=" px-3 py-2 rounded-md text-sm font-medium flex gap-3 border"
             >
-              Support This Website
+              Support This Website <img src={CoffeeLogo} alt="support" />
             </Link>
             <button
               onClick={toggleTheme}
