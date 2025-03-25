@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Head from "next/head";
-import "./globals.css";
 import Script from "next/script";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IExtract - Free Instagram Caption Extractor | Copy IG Post Captions Instantly",
-  description: "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. No ads, no tracking—just paste the post URL and get the caption hassle-free!",
+  title:
+    "IExtract - Free Instagram Caption Extractor | Copy IG Post Captions Instantly",
+  description:
+    "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. No ads, no tracking—just paste the post URL and get the caption hassle-free!",
 };
 
 export default function RootLayout({
@@ -47,28 +49,64 @@ export default function RootLayout({
           name="keywords"
           content="Instagram caption extractor, Instagram caption downloader, IG caption grabber, copy Instagram captions, extract Instagram captions, download Instagram post captions, Instagram text grabber, IExtract, free Instagram tool, social media caption extractor."
         />
-        
       </Head>
-      <body className={`antialiased`}>{children}</body>
-      <Script
+      <body className={`antialiased`}>
+        {children}
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              "name": "IExtract",
-              "description": "IExtract is a free tool that extracts captions from public Instagram posts. No ads, no tracking—just paste the post URL and get the caption instantly.",
-              "url": "https://caption.pocketutils.com/",
-              "operatingSystem": "Web",
-              "applicationCategory": "Social Media Tool",
-              "offers": {
+              name: "IExtract",
+              description:
+                "IExtract is a free tool that extracts captions from public Instagram posts. No ads, no tracking—just paste the post URL and get the caption instantly.",
+              url: "https://caption.pocketutils.com/",
+              operatingSystem: "Web",
+              applicationCategory: "Social Media Tool",
+              offers: {
                 "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
-              }
-            })
+                price: "0",
+                priceCurrency: "USD",
+              },
+            }),
           }}
         />
+
+        {/* 100% privacy-first analytics  */}
+        <Script
+          async
+          defer
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+        />
+        <noscript>
+          <img
+            src="https://queue.simpleanalyticscdn.com/noscript.gif"
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </noscript>
+
+        {/* Site behaviour tracking
+        This script tracks user behaviour on the site. */}
+        <Script
+          id="site-behaviour-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var sbSiteSecret = "25b3d697-79ae-4d10-8686-0bf64903d132";
+                window.sitebehaviourTrackingSecret = sbSiteSecret;
+                var scriptElement = document.createElement('script');
+                scriptElement.async = true;
+                scriptElement.id = 'site-behaviour-script-v2';
+                scriptElement.src = "https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=" + sbSiteSecret;
+                document.head.appendChild(scriptElement); 
+              })();
+            `,
+          }}
+        />
+      </body>
     </html>
   );
 }
