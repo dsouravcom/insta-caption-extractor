@@ -28,12 +28,12 @@ export default function Faq() {
               How can I support IExtract?
             </h3>
             <p className="text-gray-600">
-              If you find this tool helpful and want to support me, {" "}
+              If you find this tool helpful and want to support us, {" "}
               <a
                 href="https://ko-fi.com/souravdotdev"
-                className="text-blue-400"
+                className="text-blue-400 hover:underline"
               >
-                Buy me a ☕{" "}
+                Buy us a ☕{" "}
               </a>{" "}
               Your support helps keep this tool running smoothly!
             </p>

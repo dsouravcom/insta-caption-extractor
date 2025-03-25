@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="flex flex-col space-y-10 md:justify-between md:flex-row md:space-y-0">
                     <div>
                         <Image src="https://img.icons8.com/cotton/64/instagram-new.png" height={160} width={160} alt="i extract logo" className="h-10 w-10" />
-                        <p className="mt-4 text-gray-400">© {new Date().getFullYear()} I Extract. All rights reserved.</p>
+                        <p className="mt-4 text-gray-400">© {new Date().getFullYear()} IExtract. All rights reserved.</p>
                         <p>Extract Instagram Captions Instantly with IExtract - 100% Free & No Ads!</p>
                         <p></p>
                     </div>
