@@ -17,6 +17,7 @@ export default function Footer() {
                         <ul className="mt-4">
                             <li><Link href={"/about-us"} className="text-gray-400 hover:text-white">About Us</Link></li>
                             <li><Link href={"/contact-us"} className="text-gray-400 hover:text-white">Contact Us</Link></li>
+                            <li><Link href={"/sitemap.xml"} className="text-gray-400 hover:text-white">Sitemap</Link></li>
                         </ul>
                     </div>
                 </div>

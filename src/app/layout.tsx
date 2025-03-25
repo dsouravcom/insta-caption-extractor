@@ -8,6 +8,56 @@ export const metadata: Metadata = {
     "IExtract - Free Instagram Caption Extractor | Copy IG Post Captions Instantly",
   description:
     "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. No ads, no tracking—just paste the post URL and get the caption hassle-free!",
+  keywords: [
+    "Instagram caption extractor",
+    "Instagram caption downloader",
+    "IG caption grabber",
+    "copy Instagram captions",
+    "extract Instagram captions",
+    "download Instagram post captions",
+    "Instagram text grabber",
+    "IExtract",
+    "free Instagram tool",
+    "social media caption extractor",
+  ],
+  openGraph: {
+    title:
+      "IExtract - Free Instagram Caption Extractor | Copy IG Post Captions Instantly",
+    description:
+      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. No ads, no tracking—just paste the post URL and get the caption hassle-free!",
+    type: "website",
+    url: "https://caption.pocketutils.com/",
+    images: [
+      {
+        url: "/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "IExtract Open Graph Image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "IExtract - Free Instagram Caption Extractor | Copy IG Post Captions Instantly",
+    description:
+      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. No ads, no tracking—just paste the post URL and get the caption hassle-free!",
+    images: [
+      {
+        url: "/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "IExtract Twitter Image",
+      },
+    ],
+  },
+  other: {
+    'itemprop="name"':
+      "IExtract - Free Instagram Caption Extractor | Copy IG Post Captions Instantly",
+    'itemprop="description"':
+      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. No ads, no tracking—just paste the post URL and get the caption hassle-free!",
+    'itemprop="image"': "/og-image.webp",
+  },
 };
 
 export default function RootLayout({
@@ -41,17 +91,11 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#00aba9" />
         <meta name="theme-color" content="#9c9c9c" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          name="description"
-          content="Unlock Instagram captions easily with our free extractor tool. Copy captions from posts, reels, and stories to boost content & engagement. Try it now!"
-        />
-        <meta
-          name="keywords"
-          content="Instagram caption extractor, Instagram caption downloader, IG caption grabber, copy Instagram captions, extract Instagram captions, download Instagram post captions, Instagram text grabber, IExtract, free Instagram tool, social media caption extractor."
-        />
       </Head>
       <body className={`antialiased`}>
         {children}
+
+        {/* Schema.org */}
         <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -64,10 +108,14 @@ export default function RootLayout({
               url: "https://caption.pocketutils.com/",
               operatingSystem: "Web",
               applicationCategory: "Social Media Tool",
-              offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "USD",
+              inLanguage: "en",
+              browserRequirements:
+                "Requires JavaScript. Works on all modern browsers.",
+              image: {
+                "@type": "ImageObject",
+                url: "https://caption.pocketutils.com/og-image.webp",
+                width: 1200,
+                height: 630,
               },
             }),
           }}
