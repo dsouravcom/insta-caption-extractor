@@ -36,7 +36,7 @@ export default function Features() {
               Lightning Fast
             </h3>
             <p className="text-gray-600">
-              Extract captions in seconds, not minutes. Our tool is optimized
+              Extract captions in seconds. Our tool is optimized
               for speed and efficiency.
             </p>
           </div>
@@ -88,7 +88,7 @@ export default function Features() {
               No Login Required
             </h3>
             <p className="text-gray-600">
-              Use our tool without creating an account or logging in. Just paste
+              Use our tool without creating an account. Just paste
               the URL and go.
             </p>
           </div>

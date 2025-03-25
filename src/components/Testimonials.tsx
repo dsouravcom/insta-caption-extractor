@@ -4,7 +4,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900">
-            What Our Users Say
+            What Our Users Says
           </h2>
           <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
             Trusted by social media managers worldwide
