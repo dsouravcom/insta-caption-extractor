@@ -44,9 +44,9 @@ export default function Tool() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">Try It For Free</h2>
-          <p className="mt-4 text-xl text-gray-500">
-            Paste any Instagram post URL and get the caption instantly 
-          </p>
+          <h1 className="mt-4 text-xl text-gray-500">
+            Extract Instagram captions easily with IExtract by pasting the post URL 
+          </h1>
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">

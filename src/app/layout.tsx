@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title:
-    "IExtract - Free Instagram Caption Extractor | Copy IG Post Captions Instantly",
+    "IExtract - Free Instagram Caption Extractor",
   description:
     "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. No ads, no tracking—just paste the post URL and get the caption hassle-free!",
   keywords: [
