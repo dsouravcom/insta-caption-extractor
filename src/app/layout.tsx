@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://caption.pocketutils.com"),
   description:
-    "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly",
+    "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
   keywords: [
     "Instagram caption extractor",
     "Instagram caption downloader",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title:
       "IExtract - Free Instagram Caption Extractor",
     description:
-      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly",
+      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
     type: "website",
     url: "https://caption.pocketutils.com/",
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title:
       "IExtract - Free Instagram Caption Extractor",
     description:
-      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly",
+      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
     images: [
       {
         url: "/og-image.webp",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     'itemprop="name"':
       "IExtract - Free Instagram Caption Extractor",
     'itemprop="description"':
-      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly",
+      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
     'itemprop="image"': "/og-image.webp",
     'apple-mobile-web-app-title': 'IExtract',
   },
@@ -75,23 +75,101 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebApplication",
-              name: "IExtract",
-              description:
-                "IExtract is a free tool that extracts captions from public Instagram posts",
-              url: "https://caption.pocketutils.com/",
-              operatingSystem: "Web",
-              applicationCategory: "Social Media Tool",
-              inLanguage: "en",
-              browserRequirements:
-                "Requires JavaScript. Works on all modern browsers.",
-              image: {
-                "@type": "ImageObject",
-                url: "https://caption.pocketutils.com/og-image.webp",
-                width: 1200,
-                height: 630,
-              },
-            }),
+              "@graph": [
+                {
+                  "@type": "WebApplication",
+                  "name": "IExtract",
+                  "description": "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
+                  "url": "https://caption.pocketutils.com/",
+                  "operatingSystem": "Web",
+                  "applicationCategory": "SocialMediaApplication",
+                  "inLanguage": "en",
+                  "browserRequirements": "Requires JavaScript. Works on all modern browsers.",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                  },
+                  "featureList": [
+                    "Extract captions from public Instagram posts",
+                    "No login required",
+                    "Simple and clean interface",
+                    "Copy to clipboard functionality",
+                    "Fast and reliable"
+                  ],
+                  "screenshot": {
+                    "@type": "ImageObject",
+                    "url": "https://caption.pocketutils.com/og-image.webp",
+                    "width": 1200,
+                    "height": 630
+                  }
+                },
+                {
+                  "@type": "Organization",
+                  "name": "IExtract",
+                  "url": "https://caption.pocketutils.com",
+                  "logo": "https://caption.pocketutils.com/logo.png",
+                  "sameAs": [
+                    "https://twitter.com/souravdotdev",
+                    "https://github.com/dsouravcom"
+                  ],
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer support",
+                    "url": "https://caption.pocketutils.com/contact-us"
+                  }
+                },
+                {
+                  "@type": "WebSite",
+                  "name": "IExtract - Free Instagram Caption Extractor",
+                  "url": "https://caption.pocketutils.com/",
+                  "description": "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
+                  "inLanguage": "en",
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://caption.pocketutils.com/"
+                    },
+                  }
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "IExtract",
+                  "applicationCategory": "UtilityApplication",
+                  "operatingSystem": "Web",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
+                  }
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Home",
+                      "item": "https://caption.pocketutils.com/"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "About Us",
+                      "item": "https://caption.pocketutils.com/about-us"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 3,
+                      "name": "Contact Us",
+                      "item": "https://caption.pocketutils.com/contact-us"
+                    }
+                  ]
+                }
+              ]
+            })
           }}
         />
 
