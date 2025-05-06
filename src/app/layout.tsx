@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://caption.pocketutils.com"),
   title:
     "IExtract - Free Instagram Caption Extractor",
   description:

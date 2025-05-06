@@ -1,11 +1,15 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ArrowRight, Coffee, Heart, Sparkles } from "lucide-react";
+import Head from "next/head";
 import Link from "next/link";
 
 export default function About() {
   return (
     <>
+      <Head>
+        <link rel="canonical" href="https://caption.pocketutils.com/about-us" />
+      </Head>
       <Navbar />
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
