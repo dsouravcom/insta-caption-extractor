@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://caption.pocketutils.com"),
   description:
-    "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
+    "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
   keywords: [
     "Instagram caption extractor",
     "Instagram caption downloader",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title:
       "IExtract - Free Instagram Caption Extractor",
     description:
-      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
+      "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
     type: "website",
     url: "https://caption.pocketutils.com/",
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title:
       "IExtract - Free Instagram Caption Extractor",
     description:
-      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
+      "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
     images: [
       {
         url: "/og-image.webp",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     'itemprop="name"':
       "IExtract - Free Instagram Caption Extractor",
     'itemprop="description"':
-      "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
+      "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
     'itemprop="image"': "/og-image.webp",
     'apple-mobile-web-app-title': 'IExtract',
   },
@@ -79,7 +79,7 @@ export default function RootLayout({
                 {
                   "@type": "WebApplication",
                   "name": "IExtract",
-                  "description": "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
+                  "description": "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
                   "url": "https://caption.pocketutils.com/",
                   "operatingSystem": "Web",
                   "applicationCategory": "SocialMediaApplication",
@@ -123,7 +123,7 @@ export default function RootLayout({
                   "@type": "WebSite",
                   "name": "IExtract - Free Instagram Caption Extractor",
                   "url": "https://caption.pocketutils.com/",
-                  "description": "IExtract is a free Instagram caption extractor that lets you copy captions from any public Instagram post instantly. it free no-login tool. Clean interface, fast results, zero hassle.",
+                  "description": "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
                   "inLanguage": "en",
                   "potentialAction": {
                     "@type": "SearchAction",
@@ -182,7 +182,7 @@ export default function RootLayout({
         <noscript>
           <img
             src="https://queue.simpleanalyticscdn.com/noscript.gif"
-            alt=""
+            alt="simpleanalytics noscript"
             referrerPolicy="no-referrer-when-downgrade"
           />
         </noscript>
