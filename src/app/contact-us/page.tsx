@@ -1,18 +1,19 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Github, Mail, Twitter } from "lucide-react";
-import Head from "next/head";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "IExtract - Contact Us",
+  alternates: {
+    canonical: 'https://caption.pocketutils.com/contact-us',
+  },
+};
 
 export default function Contact() {
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://caption.pocketutils.com/contact-us"
-        />
-      </Head>
       <Navbar />
       <main className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">

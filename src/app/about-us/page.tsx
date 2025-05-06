@@ -1,15 +1,19 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ArrowRight, Coffee, Heart, Sparkles } from "lucide-react";
-import Head from "next/head";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "IExtract - About Us",
+  alternates: {
+    canonical: 'https://caption.pocketutils.com/about-us',
+  },
+};
 
 export default function About() {
   return (
     <>
-      <Head>
-        <link rel="canonical" href="https://caption.pocketutils.com/about-us" />
-      </Head>
       <Navbar />
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
