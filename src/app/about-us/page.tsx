@@ -5,7 +5,9 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "IExtract - About Us",
+  title: "IExtract - Free Instagram Caption Extractor - About Us",
+  description:
+    "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle | about us.",
   alternates: {
     canonical: 'https://caption.pocketutils.com/about-us',
   },

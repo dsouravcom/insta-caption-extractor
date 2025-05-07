@@ -4,8 +4,6 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://caption.pocketutils.com"),
-  description:
-    "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
   keywords: [
     "Instagram caption extractor",
     "Instagram caption downloader",
