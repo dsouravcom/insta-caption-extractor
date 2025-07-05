@@ -5,14 +5,14 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://caption.dsourav.com"),
   keywords: [
-    "Instagram caption extractor",
-    "Instagram caption downloader",
-    "IG caption grabber",
+    "instagram caption extractor",
+    "instagram caption downloader",
+    "iG caption grabber",
     "copy Instagram captions",
     "extract Instagram captions",
     "download Instagram post captions",
-    "Instagram text grabber",
-    "IExtract",
+    "instagram text grabber",
+    "iExtract",
     "free Instagram tool",
     "social media caption extractor",
   ],
@@ -193,7 +193,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                var sbSiteSecret = "25b3d697-79ae-4d10-8686-0bf64903d132";
+                var sbSiteSecret = "ecfa7c9e-f109-4694-9adb-d8e9f9bb7772";
                 window.sitebehaviourTrackingSecret = sbSiteSecret;
                 var scriptElement = document.createElement('script');
                 scriptElement.async = true;
