@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle | contact us.",
   alternates: {
-    canonical: 'https://caption.pocketutils.com/contact-us',
+    canonical: 'https://caption.dsourav.com/contact-us',
   },
 };
 
@@ -32,7 +32,7 @@ export default function Contact() {
             <div className="space-y-8">
               {/* Email Contact */}
               <a
-                href="mailto:hello@pocketutils.com"
+                href="mailto:hello@dsourav.com"
                 className="group block p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200"
               >
                 <div className="flex items-center gap-4">
@@ -43,7 +43,7 @@ export default function Contact() {
                     <h3 className="text-lg font-semibold text-gray-900">
                       Email Us
                     </h3>
-                    <p className="mt-1 text-gray-600">hello@pocketutils.com</p>
+                    <p className="mt-1 text-gray-600">hello@dsourav.com</p>
                   </div>
                 </div>
               </a>

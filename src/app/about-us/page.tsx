@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle | about us.",
   alternates: {
-    canonical: 'https://caption.pocketutils.com/about-us',
+    canonical: 'https://caption.dsourav.com/about-us',
   },
 };
 

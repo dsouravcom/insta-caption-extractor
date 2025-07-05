@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://caption.pocketutils.com"),
+  metadataBase: new URL("https://caption.dsourav.com"),
   keywords: [
     "Instagram caption extractor",
     "Instagram caption downloader",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
     type: "website",
-    url: "https://caption.pocketutils.com/",
+    url: "https://caption.dsourav.com/",
     images: [
       {
         url: "/og-image.webp",
@@ -78,7 +78,7 @@ export default function RootLayout({
                   "@type": "WebApplication",
                   "name": "IExtract",
                   "description": "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
-                  "url": "https://caption.pocketutils.com/",
+                  "url": "https://caption.dsourav.com/",
                   "operatingSystem": "Web",
                   "applicationCategory": "SocialMediaApplication",
                   "inLanguage": "en",
@@ -97,7 +97,7 @@ export default function RootLayout({
                   ],
                   "screenshot": {
                     "@type": "ImageObject",
-                    "url": "https://caption.pocketutils.com/og-image.webp",
+                    "url": "https://caption.dsourav.com/og-image.webp",
                     "width": 1200,
                     "height": 630
                   }
@@ -105,8 +105,8 @@ export default function RootLayout({
                 {
                   "@type": "Organization",
                   "name": "IExtract",
-                  "url": "https://caption.pocketutils.com",
-                  "logo": "https://caption.pocketutils.com/logo.png",
+                  "url": "https://caption.dsourav.com",
+                  "logo": "https://caption.dsourav.com/logo.png",
                   "sameAs": [
                     "https://twitter.com/souravdotdev",
                     "https://github.com/dsouravcom"
@@ -114,20 +114,20 @@ export default function RootLayout({
                   "contactPoint": {
                     "@type": "ContactPoint",
                     "contactType": "customer support",
-                    "url": "https://caption.pocketutils.com/contact-us"
+                    "url": "https://caption.dsourav.com/contact-us"
                   }
                 },
                 {
                   "@type": "WebSite",
                   "name": "IExtract - Free Instagram Caption Extractor",
-                  "url": "https://caption.pocketutils.com/",
+                  "url": "https://caption.dsourav.com/",
                   "description": "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
                   "inLanguage": "en",
                   "potentialAction": {
                     "@type": "SearchAction",
                     "target": {
                       "@type": "EntryPoint",
-                      "urlTemplate": "https://caption.pocketutils.com/"
+                      "urlTemplate": "https://caption.dsourav.com/"
                     },
                   }
                 },
@@ -150,19 +150,19 @@ export default function RootLayout({
                       "@type": "ListItem",
                       "position": 1,
                       "name": "Home",
-                      "item": "https://caption.pocketutils.com/"
+                      "item": "https://caption.dsourav.com/"
                     },
                     {
                       "@type": "ListItem",
                       "position": 2,
                       "name": "About Us",
-                      "item": "https://caption.pocketutils.com/about-us"
+                      "item": "https://caption.dsourav.com/about-us"
                     },
                     {
                       "@type": "ListItem",
                       "position": 3,
                       "name": "Contact Us",
-                      "item": "https://caption.pocketutils.com/contact-us"
+                      "item": "https://caption.dsourav.com/contact-us"
                     }
                   ]
                 }
