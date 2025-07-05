@@ -3,195 +3,126 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://caption.dsourav.com"),
-  keywords: [
-    "instagram caption extractor",
-    "instagram caption downloader",
-    "iG caption grabber",
-    "copy Instagram captions",
-    "extract Instagram captions",
-    "download Instagram post captions",
-    "instagram text grabber",
-    "iExtract",
-    "free Instagram tool",
-    "social media caption extractor",
-  ],
-  openGraph: {
-    title:
-      "IExtract - Free Instagram Caption Extractor",
-    description:
-      "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
-    type: "website",
-    url: "https://caption.dsourav.com/",
-    images: [
-      {
-        url: "/og-image.webp",
-        width: 1200,
-        height: 630,
-        alt: "IExtract Open Graph Image",
-      },
+    metadataBase: new URL("https://caption.dsourav.com"),
+    keywords: [
+        "instagram caption extractor",
+        "instagram caption downloader",
+        "iG caption grabber",
+        "copy Instagram captions",
+        "extract Instagram captions",
+        "download Instagram post captions",
+        "instagram text grabber",
+        "iExtract",
+        "free Instagram tool",
+        "social media caption extractor",
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title:
-      "IExtract - Free Instagram Caption Extractor",
-    description:
-      "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
-    images: [
-      {
-        url: "/og-image.webp",
-        width: 1200,
-        height: 630,
-        alt: "IExtract Twitter Image",
-      },
-    ],
-  },
-  other: {
-    'itemprop="name"':
-      "IExtract - Free Instagram Caption Extractor",
-    'itemprop="description"':
-      "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
-    'itemprop="image"': "/og-image.webp",
-    'apple-mobile-web-app-title': 'IExtract',
-  },
+    openGraph: {
+        title: "IExtract - Free Instagram Caption Extractor",
+        description:
+            "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
+        type: "website",
+        url: "https://caption.dsourav.com/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "IExtract Open Graph Image",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "IExtract - Free Instagram Caption Extractor",
+        description:
+            "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "IExtract Twitter Image",
+            },
+        ],
+    },
+    other: {
+        'itemprop="name"': "IExtract - Free Instagram Caption Extractor",
+        'itemprop="description"':
+            "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
+        'itemprop="image"': "/og-image.webp",
+        "apple-mobile-web-app-title": "IExtract",
+    },
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`antialiased`}>
-        {children}
+    return (
+        <html lang="en">
+            <body className={`antialiased`}>
+                {children}
 
-        {/* Schema.org */}
-        <Script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "WebApplication",
-                  "name": "IExtract",
-                  "description": "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
-                  "url": "https://caption.dsourav.com/",
-                  "operatingSystem": "Web",
-                  "applicationCategory": "SocialMediaApplication",
-                  "inLanguage": "en",
-                  "browserRequirements": "Requires JavaScript. Works on all modern browsers.",
-                  "offers": {
-                    "@type": "Offer",
-                    "price": "0",
-                    "priceCurrency": "USD"
-                  },
-                  "featureList": [
-                    "Extract captions from public Instagram posts",
-                    "No login required",
-                    "Simple and clean interface",
-                    "Copy to clipboard functionality",
-                    "Fast and reliable"
-                  ],
-                  "screenshot": {
-                    "@type": "ImageObject",
-                    "url": "https://caption.dsourav.com/og-image.webp",
-                    "width": 1200,
-                    "height": 630
-                  }
-                },
-                {
-                  "@type": "Organization",
-                  "name": "IExtract",
-                  "url": "https://caption.dsourav.com",
-                  "logo": "https://caption.dsourav.com/logo.png",
-                  "sameAs": [
-                    "https://twitter.com/souravdotdev",
-                    "https://github.com/dsouravcom"
-                  ],
-                  "contactPoint": {
-                    "@type": "ContactPoint",
-                    "contactType": "customer support",
-                    "url": "https://caption.dsourav.com/contact-us"
-                  }
-                },
-                {
-                  "@type": "WebSite",
-                  "name": "IExtract - Free Instagram Caption Extractor",
-                  "url": "https://caption.dsourav.com/",
-                  "description": "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
-                  "inLanguage": "en",
-                  "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": {
-                      "@type": "EntryPoint",
-                      "urlTemplate": "https://caption.dsourav.com/"
-                    },
-                  }
-                },
-                {
-                  "@type": "SoftwareApplication",
-                  "name": "IExtract",
-                  "applicationCategory": "UtilityApplication",
-                  "operatingSystem": "Web",
-                  "offers": {
-                    "@type": "Offer",
-                    "price": "0",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
-                  }
-                },
-                {
-                  "@type": "BreadcrumbList",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": 1,
-                      "name": "Home",
-                      "item": "https://caption.dsourav.com/"
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": 2,
-                      "name": "About Us",
-                      "item": "https://caption.dsourav.com/about-us"
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": 3,
-                      "name": "Contact Us",
-                      "item": "https://caption.dsourav.com/contact-us"
-                    }
-                  ]
-                }
-              ]
-            })
-          }}
-        />
+                {/* Schema.org */}
+                <Script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "WebApplication",
+                            name: "IExtract",
+                            description:
+                                "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
+                            url: "https://caption.dsourav.com/",
+                            operatingSystem: "Web",
+                            applicationCategory: "UtilityApplication",
+                            inLanguage: "en",
+                            browserRequirements:
+                                "Requires JavaScript. Works on all modern browsers.",
+                            offers: {
+                                "@type": "Offer",
+                                price: "0",
+                                priceCurrency: "USD",
+                            },
+                            featureList: [
+                                "Extract captions from public Instagram posts",
+                                "No login required",
+                                "Simple and clean interface",
+                                "Copy to clipboard functionality",
+                                "Fast and reliable",
+                            ],
+                            screenshot: {
+                                "@type": "ImageObject",
+                                url: "https://caption.dsourav.com/og-image.webp",
+                                width: 1200,
+                                height: 630,
+                            },
+                        }),
+                    }}
+                />
 
-        {/* 100% privacy-first analytics  */}
-        <Script
-          async
-          defer
-          src="https://scripts.simpleanalyticscdn.com/latest.js"
-        />
-        <noscript>
-          <img
-            src="https://queue.simpleanalyticscdn.com/noscript.gif"
-            alt="simpleanalytics noscript"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </noscript>
+                {/* 100% privacy-first analytics  */}
+                <Script
+                    async
+                    defer
+                    src="https://scripts.simpleanalyticscdn.com/latest.js"
+                />
+                <noscript>
+                    <img
+                        src="https://queue.simpleanalyticscdn.com/noscript.gif"
+                        alt="simpleanalytics noscript"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
+                </noscript>
 
-        {/* Site behaviour tracking
+                {/* Site behaviour tracking
         This script tracks user behaviour on the site. */}
-        <Script
-          id="site-behaviour-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
+                <Script
+                    id="site-behaviour-script"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
               (function() {
                 var sbSiteSecret = "ecfa7c9e-f109-4694-9adb-d8e9f9bb7772";
                 window.sitebehaviourTrackingSecret = sbSiteSecret;
@@ -202,9 +133,9 @@ export default function RootLayout({
                 document.head.appendChild(scriptElement); 
               })();
             `,
-          }}
-        />
-      </body>
-    </html>
-  );
+                    }}
+                />
+            </body>
+        </html>
+    );
 }
