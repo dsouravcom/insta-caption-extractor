@@ -23,14 +23,16 @@ export default function Tool() {
     setCaption("");
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}?url=${instagramUrl}`
+        `${process.env.NEXT_PUBLIC_API_URL}`,{
+          url: instagramUrl
+        }
       );
-      const string = response.data.result;
+      const string = response.data.caption;
       const result = string.slice(2, string.length - 1);
       setCaption(result);
     } catch (error) {
-      if (axios.isAxiosError(error) && error.response?.data?.message) {
-        setError(error.response.data.message);
+      if (axios.isAxiosError(error) && error.response?.data?.error) {
+        setError(error.response.data.error);
       } else {
         setError("An unexpected error occurred. Please try again later.");
       }
