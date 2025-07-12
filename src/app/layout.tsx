@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/ThemeProvider";
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
@@ -60,9 +61,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body className={`antialiased`}>
-                {children}
+                <ThemeProvider defaultTheme="system">{children}</ThemeProvider>
 
                 {/* Schema.org */}
                 <Script
