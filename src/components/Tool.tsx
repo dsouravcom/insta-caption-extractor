@@ -75,9 +75,9 @@ export default function Tool() {
     };
 
     return (
-        <section className="py-16 bg-secondary transition-colors duration-200">
+        <section className="py-6 md:py-14 bg-secondary transition-colors duration-200">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-6 md:mb-12">
                     <h2 className="text-3xl font-bold">Try It For Free</h2>
                     <h1 className="mt-4 text-xl text-secondary">
                         Extract Instagram captions easily with IExtract by
@@ -111,14 +111,14 @@ export default function Tool() {
                                     onChange={(e) =>
                                         setInstagramUrl(e.target.value)
                                     }
-                                    className="block w-full pl-10 pr-4 py-4 border border-primary rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-surface transition-colors duration-200"
+                                    className="block w-full pl-10 pr-4 py-2 md:py-4 border border-primary rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-surface transition-colors duration-200"
                                     suppressHydrationWarning
                                 />
                             </div>
                             <button
                                 disabled={loading || !instagramUrl}
                                 onClick={fetchCaption}
-                                className="px-8 cursor-pointer py-4 bg-brand-gradient text-inverse font-medium rounded-lg hover:shadow-custom-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-70 transition duration-300"
+                                className="px-8 cursor-pointer py-2 md:py-4 bg-brand-gradient text-inverse font-medium rounded-lg hover:shadow-custom-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-70 transition duration-300"
                             >
                                 {loading ? (
                                     <span className="flex items-center justify-center">
@@ -145,14 +145,14 @@ export default function Tool() {
                                         Processing...
                                     </span>
                                 ) : (
-                                    <span>Extract Caption</span>
+                                    <span className="text-white">Extract Caption</span>
                                 )}
                             </button>
                         </div>
                     </div>
 
                     {/* <!-- Results Section --> */}
-                    <div className="p-6 sm:p-10 bg-secondary transition-colors duration-200">
+                    <div className="px-6 py-2 md:px-10 md:py-5 bg-secondary transition-colors duration-200">
                         {error ? (
                             <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 text-red-700 dark:text-red-400 rounded">
                                 <div className="flex">
@@ -175,14 +175,15 @@ export default function Tool() {
                             </div>
                         ) : null}
 
-                        <div className="mb-6">
-                            <div className="flex justify-between items-center mb-4">
-                                <h3 className="text-lg font-semibold">
+                        <div className="mb-4 md:mb-6">
+                            <div className="flex justify-between items-center mb-2 md:mb-4">
+                                <h3 className="md:text-lg font-semibold text-secondary">
                                     Extracted Caption
                                 </h3>
                                 <button
                                     onClick={extractCaption}
                                     className="inline-flex items-center px-4 py-2 border border-primary shadow-custom text-sm font-medium rounded-md text-secondary bg-surface hover-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300"
+                                    disabled={!caption || loading}
                                 >
                                     {copied ? (
                                         <svg
@@ -215,12 +216,12 @@ export default function Tool() {
                                             />
                                         </svg>
                                     )}
-                                    {copied ? "Copied!" : "Copy to Clipboard"}
+                                    {copied ? "Copied!" : "Copy"}
                                 </button>
                             </div>
                             <div className="bg-surface rounded-lg border border-secondary shadow-custom transition-colors duration-200">
                                 <textarea
-                                    rows={7}
+                                    rows={10}
                                     value={caption}
                                     className="w-full px-4 py-3 rounded-lg bg-transparent focus:outline-none"
                                     disabled
