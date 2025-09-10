@@ -51,6 +51,14 @@ export default function Footer() {
                                     Sitemap
                                 </Link>
                             </li>
+                            <li>
+                                <Link
+                                    href={"/terms-and-conditions"}
+                                    className="text-secondary hover:text-primary transition-colors duration-200"
+                                >
+                                    Terms And Conditions
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
