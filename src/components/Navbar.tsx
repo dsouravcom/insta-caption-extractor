@@ -24,24 +24,24 @@ export default function Navbar() {
                     </Link>
                     <div className="flex items-center space-x-6">
                         <div className="hidden md:flex space-x-6">
-                            <a
-                                href="#features"
+                            <Link
+                                href="/#features"
                                 className="text-secondary hover:text-primary transition-colors duration-200"
                             >
                                 Features
-                            </a>
-                            <a
-                                href="#how-it-works"
+                            </Link>
+                            <Link
+                                href="/#how-it-works"
                                 className="text-secondary hover:text-primary transition-colors duration-200"
                             >
                                 How It Works
-                            </a>
-                            <a
-                                href="#faq"
+                            </Link>
+                            <Link
+                                href="/#faq"
                                 className="text-secondary hover:text-primary transition-colors duration-200"
                             >
                                 FAQ
-                            </a>
+                            </Link>
                         </div>
                         <ThemeToggle />
                     </div>

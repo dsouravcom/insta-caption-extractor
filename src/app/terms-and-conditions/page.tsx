@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description:
         "Terms and Conditions for IExtract - Free Instagram caption extractor tool. Read our terms of service, privacy policy, and usage guidelines.",
     alternates: {
-        canonical: "https://caption.dsourav.com/terms",
+        canonical: "https://caption.dsourav.com/terms-and-conditions",
     },
 };
 
