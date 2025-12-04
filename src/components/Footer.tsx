@@ -2,64 +2,97 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+    const currentYear = new Date().getFullYear();
+
     return (
-        <footer className="py-12 bg-secondary">
+        <footer className="bg-surface-secondary border-t border-border-primary pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col space-y-10 md:justify-between md:flex-row md:space-y-0">
-                    <div>
-                        <Image
-                            src="https://img.icons8.com/cotton/64/instagram-new.png"
-                            height={160}
-                            width={160}
-                            alt="i extract logo"
-                            className="h-10 w-10"
-                        />
-                        <p className="mt-4 text-secondary">
-                            © {new Date().getFullYear()} IExtract. All rights
-                            reserved.
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                    <div className="col-span-1 md:col-span-2">
+                        <Link
+                            href="/"
+                            className="flex items-center space-x-2 mb-6"
+                        >
+                            <Image
+                                src="https://img.icons8.com/cotton/64/instagram-new.png"
+                                height={40}
+                                width={40}
+                                alt="IExtract Logo"
+                                className="opacity-90"
+                            />
+                            <span className="text-2xl font-serif font-bold text-foreground tracking-tight">
+                                IExtract
+                            </span>
+                        </Link>
+                        <p className="text-muted-foreground max-w-sm font-light leading-relaxed mb-6">
+                            Extract Instagram captions instantly with our
+                            elegant, free tool. Designed for creators,
+                            marketers, and everyone in between.
                         </p>
-                        <p className="text-secondary">
-                            Extract Instagram Captions Instantly with IExtract -
-                            100% Free & No Ads!
-                        </p>
-                        <p></p>
                     </div>
+
                     <div>
-                        <h5 className="text-lg font-semibold">Company</h5>
-                        <ul className="mt-4">
+                        <h4 className="font-serif text-lg font-semibold text-foreground mb-6">
+                            Company
+                        </h4>
+                        <ul className="space-y-4">
                             <li>
                                 <Link
-                                    href={"/about-us"}
-                                    className="text-secondary hover:text-primary transition-colors duration-200"
+                                    href="/about-us"
+                                    className="text-muted-foreground hover:text-primary transition-colors font-light"
                                 >
                                     About Us
                                 </Link>
                             </li>
                             <li>
                                 <Link
-                                    href={"/contact-us"}
-                                    className="text-secondary hover:text-primary transition-colors duration-200"
+                                    href="/contact-us"
+                                    className="text-muted-foreground hover:text-primary transition-colors font-light"
                                 >
                                     Contact Us
                                 </Link>
                             </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="font-serif text-lg font-semibold text-foreground mb-6">
+                            Legal
+                        </h4>
+                        <ul className="space-y-4">
                             <li>
                                 <Link
-                                    href={"/sitemap.xml"}
-                                    className="text-secondary hover:text-primary transition-colors duration-200"
+                                    href="/terms-and-conditions"
+                                    className="text-muted-foreground hover:text-primary transition-colors font-light"
+                                >
+                                    Terms & Conditions
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/sitemap.xml"
+                                    className="text-muted-foreground hover:text-primary transition-colors font-light"
                                 >
                                     Sitemap
                                 </Link>
                             </li>
-                            <li>
-                                <Link
-                                    href={"/terms-and-conditions"}
-                                    className="text-secondary hover:text-primary transition-colors duration-200"
-                                >
-                                    Terms And Conditions
-                                </Link>
-                            </li>
                         </ul>
+                    </div>
+                </div>
+
+                <div className="border-t border-border-primary pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-sm text-muted-foreground font-light">
+                        &copy; {currentYear} IExtract. All rights reserved.
+                    </p>
+                    <div className="flex items-center space-x-6">
+                        <a
+                            href="https://github.com/souravdotdev"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors text-sm font-light"
+                        >
+                            Built by Sourav
+                        </a>
                     </div>
                 </div>
             </div>

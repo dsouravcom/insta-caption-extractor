@@ -1,88 +1,67 @@
 import Image from "next/image";
 
 export default function HowItWorks() {
+    const steps = [
+        {
+            number: "01",
+            title: "Copy URL",
+            description:
+                "Find the Instagram post you love and copy its link from the address bar or share menu.",
+            image: "https://i.imgur.com/Tl2qTD2.png",
+        },
+        {
+            number: "02",
+            title: "Paste & Extract",
+            description:
+                "Paste the link into our tool. We'll instantly process the post to find the caption.",
+            image: "https://i.imgur.com/amPliF8.png",
+        },
+        {
+            number: "03",
+            title: "Copy Text",
+            description:
+                "Your caption is ready. Copy it with one click and use it wherever you need.",
+            image: "https://i.imgur.com/PN4hjC5.png",
+        },
+    ];
+
     return (
-        <section id="how-it-works" className="py-16 bg-surface">
+        <section id="how-it-works" className="py-24 bg-surface overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold">How It Works</h2>
-                    <p className="mt-4 text-xl text-secondary max-w-3xl mx-auto">
-                        Extract Instagram captions in just a few simple steps
-                    </p>
+                <div className="mb-20">
+                    <h2 className="text-4xl font-serif font-medium text-primary mb-6">
+                        Simple as <br />
+                        <span className="italic text-text-secondary">
+                            one, two, three.
+                        </span>
+                    </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="relative">
-                        <div className="absolute -left-4 -top-4 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-brand">
-                            1
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                    {steps.map((step, index) => (
+                        <div key={index} className="group relative">
+                            <div className="absolute -top-12 left-0 text-8xl font-serif font-bold text-surface-tertiary/50 -z-10 select-none transition-colors duration-500 group-hover:text-secondary/10">
+                                {step.number}
+                            </div>
+                            <div className="pt-8">
+                                <div className="relative aspect-[4/3] mb-8 rounded-2xl overflow-hidden bg-surface-secondary">
+                                    <Image
+                                        src={step.image}
+                                        alt={step.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+                                </div>
+                                <h3 className="text-2xl font-medium text-primary mb-3 group-hover:text-secondary transition-colors duration-300">
+                                    {step.title}
+                                </h3>
+                                <p className="text-text-secondary leading-relaxed">
+                                    {step.description}
+                                </p>
+                            </div>
                         </div>
-                        <div className="bg-surface rounded-xl shadow-custom-lg p-6 h-full border border-tertiary">
-                            <Image
-                                src="https://i.imgur.com/Tl2qTD2.png"
-                                alt="IExtract - Free Instagram Caption Extractor"
-                                height={160}
-                                width={160}
-                                loading="lazy"
-                                className="w-full h-40 object-cover rounded-lg mb-6"
-                            />
-                            <h3 className="text-xl font-semibold mb-2">
-                                Copy Instagram URL
-                            </h3>
-                            <p className="text-secondary">
-                                Find the Instagram post you want to extract the
-                                caption from and copy its URL from the address
-                                bar.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="relative">
-                        <div className="absolute -left-4 -top-4 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-brand">
-                            2
-                        </div>
-                        <div className="bg-surface rounded-xl shadow-custom-lg p-6 h-full border border-tertiary">
-                            <Image
-                                src="https://i.imgur.com/amPliF8.png"
-                                alt="Copy Instagram Captions Instantly with IExtract"
-                                height={160}
-                                width={160}
-                                loading="lazy"
-                                className="w-full h-40 object-cover rounded-lg mb-6"
-                            />
-                            <h3 className="text-xl font-semibold mb-2">
-                                Paste URL & Extract
-                            </h3>
-                            <p className="text-secondary">
-                                Paste the URL into our tool and click the
-                                "Extract Caption" button to process the
-                                Instagram post.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="relative">
-                        <div className="absolute -left-4 -top-4 w-16 h-16 bg-secondary rounded-full flex items-center justify-center text-2xl font-bold text-brand">
-                            3
-                        </div>
-                        <div className="bg-surface rounded-xl shadow-custom-lg p-6 h-full border border-tertiary">
-                            <Image
-                                src="https://i.imgur.com/PN4hjC5.png"
-                                alt="Best Instagram Caption Grabber - No Ads, No Tracking"
-                                height={160}
-                                width={160}
-                                loading="lazy"
-                                className="w-full h-40 object-cover rounded-lg mb-6"
-                            />
-                            <h3 className="text-xl font-semibold mb-2">
-                                Copy & Use Caption
-                            </h3>
-                            <p className="text-secondary">
-                                Copy the extracted caption with a single click
-                                and use it anywhere you want - no formatting
-                                needed.
-                            </p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

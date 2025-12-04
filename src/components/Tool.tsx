@@ -75,25 +75,38 @@ export default function Tool() {
     };
 
     return (
-        <section className="py-6 md:py-14 bg-secondary transition-colors duration-200">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-6 md:mb-12">
-                    <h2 className="text-3xl font-bold">Try It For Free</h2>
-                    <h1 className="mt-4 text-xl text-secondary">
-                        Extract Instagram captions easily with IExtract by
-                        pasting the post URL
+        <section className="min-h-[80vh] flex flex-col items-center justify-center pt-24 md:pt-32 pb-20 bg-background relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-brand-accent/5 blur-[100px]" />
+                <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-brand-secondary/5 blur-[100px]" />
+            </div>
+
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div className="text-center mb-16 space-y-6">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-border-primary text-sm font-medium text-text-secondary tracking-wide">
+                        Free Instagram Caption Extractor
+                    </span>
+                    <h1 className="text-5xl md:text-7xl font-serif font-medium text-primary tracking-tight leading-tight">
+                        Extract captions <br />
+                        <span className="italic text-text-secondary">
+                            effortlessly.
+                        </span>
                     </h1>
+                    <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto font-light leading-relaxed">
+                        Simply paste your Instagram post URL below and let our
+                        tool do the magic. No login required.
+                    </p>
                 </div>
 
-                <div className="bg-surface rounded-2xl shadow-custom-xl overflow-hidden transition-colors duration-200">
-                    {/* <!-- Input Form --> */}
-                    <div className="p-6 sm:p-10 border-b border-secondary">
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <div className="relative flex-grow">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <div className="bg-surface/50 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-2 md:p-4 transition-all duration-300 hover:shadow-3xl">
+                    <div className="bg-surface rounded-2xl border border-border-primary overflow-hidden">
+                        <div className="p-2 md:p-4 flex flex-col md:flex-row gap-2">
+                            <div className="relative flex-grow group">
+                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5 text-muted"
+                                        className="h-5 w-5 text-text-tertiary group-focus-within:text-brand-primary transition-colors duration-300"
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
                                     >
@@ -106,26 +119,24 @@ export default function Tool() {
                                 </div>
                                 <input
                                     type="text"
-                                    placeholder="Paste Instagram post URL here"
+                                    placeholder="Paste Instagram URL here..."
                                     value={instagramUrl}
                                     onChange={(e) =>
                                         setInstagramUrl(e.target.value)
                                     }
-                                    className="block w-full pl-10 pr-4 py-2 md:py-4 border border-primary rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-surface transition-colors duration-200"
+                                    className="block w-full pl-12 pr-4 py-4 bg-transparent border-none focus:ring-0 text-primary placeholder-text-tertiary text-lg"
                                     suppressHydrationWarning
                                 />
                             </div>
                             <button
                                 disabled={loading || !instagramUrl}
                                 onClick={fetchCaption}
-                                className="px-8 cursor-pointer py-2 md:py-4 bg-brand-gradient text-inverse font-medium rounded-lg hover:shadow-custom-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-70 transition duration-300"
+                                className="px-8 py-4 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl active:scale-[0.98]"
                             >
                                 {loading ? (
-                                    <span className="flex items-center justify-center">
+                                    <span className="flex items-center justify-center gap-2">
                                         <svg
-                                            className="animate-spin -ml-1 mr-2 h-5 w-5 text-inverse"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
+                                            className="animate-spin h-5 w-5"
                                             viewBox="0 0 24 24"
                                         >
                                             <circle
@@ -135,125 +146,101 @@ export default function Tool() {
                                                 r="10"
                                                 stroke="currentColor"
                                                 strokeWidth="4"
-                                            ></circle>
+                                                fill="none"
+                                            />
                                             <path
                                                 className="opacity-75"
                                                 fill="currentColor"
                                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                            ></path>
+                                            />
                                         </svg>
-                                        Processing...
+                                        Processing
                                     </span>
                                 ) : (
-                                    <span className="text-white">Extract Caption</span>
+                                    "Extract Caption"
                                 )}
                             </button>
                         </div>
                     </div>
 
-                    {/* <!-- Results Section --> */}
-                    <div className="px-6 py-2 md:px-10 md:py-5 bg-secondary transition-colors duration-200">
-                        {error ? (
-                            <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 text-red-700 dark:text-red-400 rounded">
-                                <div className="flex">
+                    {/* Results Area */}
+                    {(caption || error) && (
+                        <div className="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                            {error ? (
+                                <div className="p-4 bg-error/10 border border-error/20 rounded-xl text-error flex items-center gap-3">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="h-6 w-6 text-error mr-3"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
+                                        className="h-5 w-5"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
                                     >
                                         <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                                            fillRule="evenodd"
+                                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                                            clipRule="evenodd"
                                         />
                                     </svg>
-                                    <span>{error}</span>
-                                </div>
-                            </div>
-                        ) : null}
-
-                        <div className="mb-4 md:mb-6">
-                            <div className="flex justify-between items-center mb-2 md:mb-4">
-                                <h3 className="md:text-lg font-semibold text-secondary">
-                                    Extracted Caption
-                                </h3>
-                                <button
-                                    onClick={extractCaption}
-                                    className="inline-flex items-center px-4 py-2 border border-primary shadow-custom text-sm font-medium rounded-md text-secondary bg-surface hover-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300"
-                                    disabled={!caption || loading}
-                                >
-                                    {copied ? (
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5 mr-2 text-success"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M5 13l4 4L19 7"
-                                            />
-                                        </svg>
-                                    ) : (
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5 mr-2 text-muted"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
-                                            />
-                                        </svg>
-                                    )}
-                                    {copied ? "Copied!" : "Copy"}
-                                </button>
-                            </div>
-                            <div className="bg-surface rounded-lg border border-secondary shadow-custom transition-colors duration-200">
-                                <textarea
-                                    rows={10}
-                                    value={caption}
-                                    className="w-full px-4 py-3 rounded-lg bg-transparent focus:outline-none"
-                                    disabled
-                                ></textarea>
-                            </div>
-                            {caption && !error ? (
-                                <div className="mt-4 flex items-center text-sm text-secondary">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5 mr-2 text-brand"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                                        />
-                                    </svg>
-                                    <span>
-                                        {caption
-                                            ? "Tap 'Copy to Clipboard' to use your caption anywhere."
-                                            : "Enter an Instagram URL above to extract the caption."}
-                                    </span>
+                                    {error}
                                 </div>
                             ) : (
-                                ""
+                                <div className="bg-surface rounded-2xl border border-border-primary overflow-hidden">
+                                    <div className="flex justify-between items-center p-4 border-b border-border-secondary bg-surface-secondary/50">
+                                        <span className="text-sm font-medium text-text-secondary">
+                                            Extracted Content
+                                        </span>
+                                        <button
+                                            onClick={extractCaption}
+                                            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border-primary hover:bg-surface-secondary transition-colors text-sm font-medium text-primary"
+                                        >
+                                            {copied ? (
+                                                <>
+                                                    <svg
+                                                        className="h-4 w-4 text-success"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth="2"
+                                                            d="M5 13l4 4L19 7"
+                                                        />
+                                                    </svg>
+                                                    Copied
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth="2"
+                                                            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
+                                                        />
+                                                    </svg>
+                                                    Copy Text
+                                                </>
+                                            )}
+                                        </button>
+                                    </div>
+                                    <div className="p-4">
+                                        <textarea
+                                            rows={8}
+                                            value={caption}
+                                            readOnly
+                                            className="w-full bg-transparent border-none focus:ring-0 text-primary resize-none font-mono text-sm leading-relaxed"
+                                        />
+                                    </div>
+                                </div>
                             )}
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
         </section>

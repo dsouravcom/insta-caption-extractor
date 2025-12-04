@@ -1,7 +1,14 @@
 import { ThemeProvider } from "@/components/ThemeProvider";
 import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({
+    subsets: ["latin"],
+    variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://caption.dsourav.com"),
@@ -62,8 +69,16 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`antialiased`}>
-                <ThemeProvider defaultTheme="system">{children}</ThemeProvider>
+            <body
+                className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground selection:bg-primary/20 selection:text-primary`}
+            >
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                >
+                    {children}
+                </ThemeProvider>
 
                 {/* Schema.org */}
                 <Script
