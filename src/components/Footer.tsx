@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { memo } from "react";
 
-export default function Footer() {
+const Footer = memo(function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -19,6 +20,7 @@ export default function Footer() {
                                 width={40}
                                 alt="IExtract Logo"
                                 className="opacity-90"
+                                loading="lazy"
                             />
                             <span className="text-2xl font-serif font-bold text-foreground tracking-tight">
                                 IExtract
@@ -98,4 +100,6 @@ export default function Footer() {
             </div>
         </footer>
     );
-}
+});
+
+export default Footer;

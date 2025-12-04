@@ -1,40 +1,42 @@
-export default function Faq() {
-    const faqs = [
-        {
-            question: "Is IExtract free to use?",
-            answer: "Yes! Iextract is completely free to use, and we offer a fresh, clean UI with no annoying ads. Our goal is to keep it simple and accessible for everyone.",
-        },
-        {
-            question: "How can I support IExtract?",
-            answer: (
-                <>
-                    If you find this tool helpful and want to support us,{" "}
-                    <a
-                        href="https://ko-fi.com/souravdotdev"
-                        className="text-primary hover:text-primary/80 underline decoration-1 underline-offset-4 transition-colors"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Buy us a ☕
-                    </a>{" "}
-                    Your support helps keep this tool running smoothly!
-                </>
-            ),
-        },
-        {
-            question: "Can I extract captions from private accounts?",
-            answer: "No, our tool only works with public Instagram posts. You can't extract captions from private accounts due to privacy restrictions.",
-        },
-        {
-            question: "Is IExtract secure?",
-            answer: "Yes, absolutely. We do not store any data or track any links you enter. Everything happens in real-time without saving anything on our servers.",
-        },
-        {
-            question: "Can I use the extracted captions anywhere?",
-            answer: "Absolutely! You can copy the extracted captions and use them anywhere you want - no formatting needed.",
-        },
-    ];
+import { memo } from "react";
 
+const FAQS_DATA = [
+    {
+        question: "Is IExtract free to use?",
+        answer: "Yes! Iextract is completely free to use, and we offer a fresh, clean UI with no annoying ads. Our goal is to keep it simple and accessible for everyone.",
+    },
+    {
+        question: "How can I support IExtract?",
+        answer: (
+            <>
+                If you find this tool helpful and want to support us,{" "}
+                <a
+                    href="https://ko-fi.com/souravdotdev"
+                    className="text-primary hover:text-primary/80 underline decoration-1 underline-offset-4 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Buy us a ☕
+                </a>{" "}
+                Your support helps keep this tool running smoothly!
+            </>
+        ),
+    },
+    {
+        question: "Can I extract captions from private accounts?",
+        answer: "No, our tool only works with public Instagram posts. You can't extract captions from private accounts due to privacy restrictions.",
+    },
+    {
+        question: "Is IExtract secure?",
+        answer: "Yes, absolutely. We do not store any data or track any links you enter. Everything happens in real-time without saving anything on our servers.",
+    },
+    {
+        question: "Can I use the extracted captions anywhere?",
+        answer: "Absolutely! You can copy the extracted captions and use them anywhere you want - no formatting needed.",
+    },
+] as const;
+
+const Faq = memo(function Faq() {
     return (
         <section
             id="faq"
@@ -57,7 +59,7 @@ export default function Faq() {
                 </div>
 
                 <div className="space-y-6">
-                    {faqs.map((faq, index) => (
+                    {FAQS_DATA.map((faq, index) => (
                         <div
                             key={index}
                             className="group bg-surface-secondary/50 backdrop-blur-sm border border-border-primary rounded-xl p-8 transition-all duration-300 hover:shadow-soft hover:border-primary/20"
@@ -74,4 +76,6 @@ export default function Faq() {
             </div>
         </section>
     );
-}
+});
+
+export default Faq;

@@ -1,25 +1,27 @@
-export default function Testimonials() {
-    const testimonials = [
-        {
-            content:
-                "IExtract is a lifesaver! I just paste the link and get the caption instantly. It saves me so much time when I need to repost content.",
-            author: "Sarah Jenkins",
-            role: "Social Media Manager",
-        },
-        {
-            content:
-                "The cleanest tool I've found. No ads, no popups, just does what it says. Highly recommended for anyone working with Instagram.",
-            author: "Mike Chen",
-            role: "Content Creator",
-        },
-        {
-            content:
-                "I use this daily for my marketing agency. It's fast, reliable, and free. Can't ask for more than that.",
-            author: "Emma Wilson",
-            role: "Digital Marketer",
-        },
-    ];
+import { memo } from "react";
 
+const TESTIMONIALS_DATA = [
+    {
+        content:
+            "IExtract is a lifesaver! I just paste the link and get the caption instantly. It saves me so much time when I need to repost content.",
+        author: "Sarah Jenkins",
+        role: "Social Media Manager",
+    },
+    {
+        content:
+            "The cleanest tool I've found. No ads, no popups, just does what it says. Highly recommended for anyone working with Instagram.",
+        author: "Mike Chen",
+        role: "Content Creator",
+    },
+    {
+        content:
+            "I use this daily for my marketing agency. It's fast, reliable, and free. Can't ask for more than that.",
+        author: "Emma Wilson",
+        role: "Digital Marketer",
+    },
+] as const;
+
+const Testimonials = memo(function Testimonials() {
     return (
         <section className="py-24 bg-surface-secondary">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +35,7 @@ export default function Testimonials() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {testimonials.map((testimonial, index) => (
+                    {TESTIMONIALS_DATA.map((testimonial, index) => (
                         <div
                             key={index}
                             className="bg-surface p-8 rounded-3xl border border-border-primary hover:shadow-xl transition-all duration-500"
@@ -68,4 +70,6 @@ export default function Testimonials() {
             </div>
         </section>
     );
-}
+});
+
+export default Testimonials;

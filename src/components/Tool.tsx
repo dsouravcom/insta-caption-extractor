@@ -48,6 +48,8 @@ export default function Tool() {
     };
 
     const fetchCaption = async () => {
+        if (!instagramUrl.trim()) return;
+
         setLoading(true);
         setError("");
         setCaption("");
