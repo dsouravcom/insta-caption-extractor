@@ -1,6 +1,7 @@
 "use client";
+import { Turnstile } from "@marsidev/react-turnstile";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Tool() {
     const [instagramUrl, setInstagramUrl] = useState("");
@@ -9,6 +10,9 @@ export default function Tool() {
     const [loading, setLoading] = useState(false);
     const [copied, setCopied] = useState(false);
     const [mounted, setMounted] = useState(false);
+    const [turnstileToken, setTurnstileToken] = useState("");
+    const turnstileRef = useRef<any>(null);
+    const resultsRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setMounted(true);
@@ -50,6 +54,11 @@ export default function Tool() {
     const fetchCaption = async () => {
         if (!instagramUrl.trim()) return;
 
+        if (!turnstileToken) {
+            setError("Please complete the verification challenge.");
+            return;
+        }
+
         setLoading(true);
         setError("");
         setCaption("");
@@ -58,11 +67,24 @@ export default function Tool() {
                 `${process.env.NEXT_PUBLIC_API_URL}`,
                 {
                     url: instagramUrl,
+                    token: turnstileToken,
                 }
             );
             const string = response.data.caption;
             const result = string.slice(2, string.length - 1);
             setCaption(result);
+
+            // Smooth scroll to results after a brief delay
+            setTimeout(() => {
+                resultsRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                });
+            }, 100);
+
+            // Reset turnstile after successful verification
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
         } catch (error) {
             if (axios.isAxiosError(error) && error.response?.data?.error) {
                 setError(error.response.data.error);
@@ -71,6 +93,9 @@ export default function Tool() {
                     "An unexpected error occurred. Please try again later."
                 );
             }
+            // Reset turnstile on error
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
         } finally {
             setLoading(false);
         }
@@ -80,12 +105,12 @@ export default function Tool() {
         <section className="min-h-[80vh] flex flex-col items-center justify-center pt-24 md:pt-32 pb-20 bg-background relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-brand-accent/5 blur-[100px]" />
-                <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-brand-secondary/5 blur-[100px]" />
+                <div className="absolute top-[-10%] right-[-5%] w-125 h-125 rounded-full bg-brand-accent/5 blur-[100px]" />
+                <div className="absolute bottom-[-10%] left-[-5%] w-125 h-125 rounded-full bg-brand-secondary/5 blur-[100px]" />
             </div>
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div className="text-center mb-16 space-y-6">
+                <div className="text-center mb-6 space-y-6">
                     <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-border-primary text-sm font-medium text-text-secondary tracking-wide">
                         Free Instagram Caption Extractor
                     </span>
@@ -100,6 +125,30 @@ export default function Tool() {
                         tool do the magic. No login required.
                     </p>
                 </div>
+
+                {/* Turnstile Widget */}
+                {mounted && (
+                    <div className="mt-4 flex justify-end mb-1">
+                        <Turnstile
+                            ref={turnstileRef}
+                            siteKey={
+                                process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""
+                            }
+                            onSuccess={(token) => setTurnstileToken(token)}
+                            onError={() => {
+                                setTurnstileToken("");
+                                setError(
+                                    "Verification failed. Please try again."
+                                );
+                            }}
+                            onExpire={() => setTurnstileToken("")}
+                            options={{
+                                theme: "auto",
+                                size: "normal",
+                            }}
+                        />
+                    </div>
+                )}
 
                 <div className="bg-surface/50 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-2 md:p-4 transition-all duration-300 hover:shadow-3xl">
                     <div className="bg-surface rounded-2xl border border-border-primary overflow-hidden">
@@ -131,7 +180,9 @@ export default function Tool() {
                                 />
                             </div>
                             <button
-                                disabled={loading || !instagramUrl}
+                                disabled={
+                                    loading || !instagramUrl || !turnstileToken
+                                }
                                 onClick={fetchCaption}
                                 className="px-8 py-4 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl active:scale-[0.98]"
                             >
@@ -167,7 +218,10 @@ export default function Tool() {
 
                     {/* Results Area */}
                     {(caption || error) && (
-                        <div className="mt-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <div
+                            ref={resultsRef}
+                            className="mt-4 animate-in fade-in slide-in-from-bottom-6 duration-500"
+                        >
                             {error ? (
                                 <div className="p-4 bg-error/10 border border-error/20 rounded-xl text-error flex items-center gap-3">
                                     <svg
