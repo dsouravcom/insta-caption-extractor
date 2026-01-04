@@ -8,23 +8,24 @@ import Tool from "@/components/Tool";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "IExtract - Free Instagram Caption Extractor",
-  description: "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
-  alternates: {
-    canonical: 'https://caption.dsourav.com',
-  },
+    title: "IExtract - Free Ads-Free Instagram Caption Extractor",
+    description:
+        "IExtract is a free, ads-free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
+    alternates: {
+        canonical: "https://caption.dsourav.com",
+    },
 };
 
 export default function Home() {
-  return (
-    <>
-      <Navbar />
-      <Tool />
-      <HowItWorks />
-      <Features />
-      <Testimonials />
-      <Faq />
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <Navbar />
+            <Tool />
+            <HowItWorks />
+            <Features />
+            <Testimonials />
+            <Faq />
+            <Footer />
+        </>
+    );
 }

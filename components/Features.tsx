@@ -65,9 +65,9 @@ const FEATURES_DATA = [
         ),
     },
     {
-        title: "100% Free",
+        title: "100% Free & Ads-Free",
         description:
-            "Completely free forever. No hidden fees or premium tiers.",
+            "Completely free forever with zero ads. No hidden fees, no premium tiers, just a clean experience.",
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"

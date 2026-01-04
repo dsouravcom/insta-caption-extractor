@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import KofiButton from "./KofiButton";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
@@ -37,28 +38,38 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-b border-border-primary shadow-sm">
+            <nav className="sticky top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-border-primary shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16 md:h-20">
+                    <div className="flex justify-between items-center h-16">
                         {/* Logo */}
-                        <Link
-                            href="/"
+                        <div className="flex items-center gap-2 md:gap-3 ">
+                            <Link
+                                href="/"
                             className="flex items-center gap-2 md:gap-3 z-50"
-                            onClick={closeMenu}
-                        >
-                            <div className="relative w-7 h-7 md:w-9 md:h-9 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                                <Image
-                                    src="https://img.icons8.com/cotton/64/instagram-new.png"
-                                    alt="IExtract Logo"
-                                    fill
-                                    className="object-cover"
-                                    priority
-                                />
-                            </div>
-                            <span className="text-lg md:text-xl font-serif font-semibold text-foreground">
-                                IExtract
-                            </span>
-                        </Link>
+                                onClick={closeMenu}
+                            >
+                                <div className="relative w-7 h-7 md:w-9 md:h-9 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                                    <Image
+                                        src="https://img.icons8.com/cotton/64/instagram-new.png"
+                                        alt="IExtract Logo"
+                                        fill
+                                        className="object-cover"
+                                        priority
+                                    />
+                                </div>
+                                <span className="text-lg md:text-xl font-serif font-semibold text-foreground">
+                                    IExtract
+                                </span>
+                            </Link>
+                            <KofiButton
+                                className="ml-1 mt-1 hidden sm:flex"
+                                showText={true}
+                            />
+                            <KofiButton
+                                className="ml-1 mt-1 flex sm:hidden"
+                                showText={false}
+                            />
+                        </div>
 
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center gap-8">

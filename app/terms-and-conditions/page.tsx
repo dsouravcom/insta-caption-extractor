@@ -15,19 +15,14 @@ export default function Terms() {
     return (
         <div className="min-h-screen bg-background flex flex-col">
             <Navbar />
-            <main className="flex-grow pt-24 pb-16">
+            <main className="grow pt-24 pb-16">
                 <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
                             Terms and Conditions
                         </h1>
                         <p className="text-lg text-muted-foreground font-light">
-                            Last updated:{" "}
-                            {new Date().toLocaleDateString("en-US", {
-                                year: "numeric",
-                                month: "long",
-                                day: "numeric",
-                            })}
+                            Last updated: January 5, 2026
                         </p>
                     </div>
 

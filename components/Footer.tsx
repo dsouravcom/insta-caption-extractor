@@ -31,6 +31,13 @@ const Footer = memo(function Footer() {
                             elegant, free tool. Designed for creators,
                             marketers, and everyone in between.
                         </p>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground/80 bg-surface-tertiary/30 w-fit px-3 py-1.5 rounded-full border border-border-primary/50">
+                            <span className="relative flex h-1.5 w-1.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-success"></span>
+                            </span>
+                            100% Ads-free & Privacy-focused
+                        </div>
                     </div>
 
                     <div>
@@ -88,12 +95,12 @@ const Footer = memo(function Footer() {
                     </p>
                     <div className="flex items-center space-x-6">
                         <a
-                            href="https://github.com/souravdotdev"
+                            href="https://sourav.dev"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-primary transition-colors text-sm font-light"
                         >
-                            Built by Sourav
+                            Built by Sourav👋
                         </a>
                     </div>
                 </div>

@@ -25,9 +25,9 @@ export const metadata: Metadata = {
         "social media caption extractor",
     ],
     openGraph: {
-        title: "IExtract - Free Instagram Caption Extractor",
+        title: "IExtract - Free Ads-Free Instagram Caption Extractor",
         description:
-            "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
+            "IExtract is a free, ads-free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
         type: "website",
         url: "https://caption.dsourav.com/",
         images: [
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "IExtract - Free Instagram Caption Extractor",
+        title: "IExtract - Free Ads-Free Instagram Caption Extractor",
         description:
-            "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
+            "IExtract is a free, ads-free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
         images: [
             {
                 url: "/og-image.webp",
@@ -54,9 +54,10 @@ export const metadata: Metadata = {
         ],
     },
     other: {
-        'itemprop="name"': "IExtract - Free Instagram Caption Extractor",
+        'itemprop="name"':
+            "IExtract - Free Ads-Free Instagram Caption Extractor",
         'itemprop="description"':
-            "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
+            "IExtract is a free, ads-free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
         'itemprop="image"': "/og-image.webp",
         "apple-mobile-web-app-title": "IExtract",
     },
@@ -89,7 +90,7 @@ export default function RootLayout({
                             "@type": "WebApplication",
                             name: "IExtract",
                             description:
-                                "IExtract is a free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
+                                "IExtract is a free, ads-free Instagram caption extractor that helps you copy text from any public post instantly. No login required, clean interface, zero hassle.",
                             url: "https://caption.dsourav.com/",
                             operatingSystem: "Web",
                             applicationCategory: "UtilityApplication",

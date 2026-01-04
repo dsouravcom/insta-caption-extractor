@@ -102,7 +102,7 @@ export default function Tool() {
     };
 
     return (
-        <section className="min-h-[80vh] flex flex-col items-center justify-center pt-24 md:pt-32 pb-20 bg-background relative overflow-hidden">
+        <section className=" flex flex-col items-center justify-center pt-10 pb-20 bg-background relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
                 <div className="absolute top-[-10%] right-[-5%] w-125 h-125 rounded-full bg-brand-accent/5 blur-[100px]" />
@@ -111,9 +111,16 @@ export default function Tool() {
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="text-center mb-6 space-y-6">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-border-primary text-sm font-medium text-text-secondary tracking-wide">
-                        Free Instagram Caption Extractor
-                    </span>
+                    <div className="flex flex-col items-center gap-3">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-border-primary text-sm font-medium text-text-secondary tracking-wide">
+                            Free Instagram Caption Extractor
+                        </span>
+                        <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground/60 font-semibold">
+                            <span className="w-1 h-1 rounded-full bg-success"></span>
+                            100% Ads-Free Experience
+                            <span className="w-1 h-1 rounded-full bg-success"></span>
+                        </div>
+                    </div>
                     <h1 className="text-5xl md:text-7xl font-serif font-medium text-primary tracking-tight leading-tight">
                         Extract captions <br />
                         <span className="italic text-text-secondary">
@@ -153,7 +160,7 @@ export default function Tool() {
                 <div className="bg-surface/50 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-2 md:p-4 transition-all duration-300 hover:shadow-3xl">
                     <div className="bg-surface rounded-2xl border border-border-primary overflow-hidden">
                         <div className="p-2 md:p-4 flex flex-col md:flex-row gap-2">
-                            <div className="relative flex-grow group">
+                            <div className="relative grow group">
                                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"

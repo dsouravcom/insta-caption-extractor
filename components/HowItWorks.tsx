@@ -45,7 +45,7 @@ const HowItWorks = memo(function HowItWorks() {
                                 {step.number}
                             </div>
                             <div className="pt-8">
-                                <div className="relative aspect-[4/3] mb-8 rounded-2xl overflow-hidden bg-surface-secondary">
+                                <div className="relative aspect-4/3 mb-8 rounded-2xl overflow-hidden bg-surface-secondary">
                                     <Image
                                         src={step.image}
                                         alt={step.title}

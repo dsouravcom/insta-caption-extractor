@@ -8,18 +8,46 @@ const FAQS_DATA = [
     {
         question: "How can I support IExtract?",
         answer: (
-            <>
-                If you find this tool helpful and want to support us,{" "}
+            <div className="flex flex-col gap-4">
+                <p>
+                    If you find this tool helpful and want to support our
+                    ads-free mission, you can help us keep the servers running
+                    smoothly.
+                </p>
                 <a
                     href="https://ko-fi.com/souravdotdev"
-                    className="text-primary hover:text-primary/80 underline decoration-1 underline-offset-4 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 w-fit px-4 py-2 bg-surface border border-border-primary rounded-lg hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
                 >
-                    Buy us a ☕
-                </a>{" "}
-                Your support helps keep this tool running smoothly!
-            </>
+                    <div className="w-5 h-5 transition-transform duration-300 group-hover:scale-110">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-label="Ko-Fi"
+                            role="img"
+                            viewBox="0 0 512 512"
+                        >
+                            <rect
+                                width="512"
+                                height="512"
+                                rx="15%"
+                                fill="#478db1"
+                            />
+                            <path
+                                fill="#fff"
+                                d="M371 140H100c-18 0-20 20 -20 20v184s3 40 40 40h188c41 0 40-40 40 -40v-26h23a89 89 0 000-178m0 132h-23v-86h23a43 43 0 010 86"
+                            />
+                            <path
+                                fill="#f1464d"
+                                d="M286 219c-10-30-63-33-77 3-15-36-67-33-77-3-7 19-4 35 9 54s68 64 68 64 56-45 68-64 15-35 9-54"
+                            />
+                        </svg>
+                    </div>
+                    <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                        Support IExtract on Ko-fi
+                    </span>
+                </a>
+            </div>
         ),
     },
     {

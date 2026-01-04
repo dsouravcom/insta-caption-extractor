@@ -16,7 +16,7 @@ export default function Contact() {
     return (
         <div className="min-h-screen bg-background flex flex-col">
             <Navbar />
-            <main className="flex-grow pt-24 pb-16">
+            <main className="grow pt-24 pb-16">
                 <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8 relative">
                     {/* Decorative background */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-2xl opacity-30 pointer-events-none">
@@ -37,10 +37,10 @@ export default function Contact() {
                     <div className="grid gap-6 max-w-lg mx-auto relative z-10">
                         {/* Email Contact */}
                         <a
-                            href="mailto:hello@dsourav.com"
+                            href="mailto:hello@sourav.dev"
                             className="group flex items-center p-6 bg-surface rounded-2xl border border-border-primary shadow-soft hover:shadow-lg hover:border-primary/30 transition-all duration-300"
                         >
-                            <div className="flex-shrink-0 p-4 bg-surface-secondary rounded-xl group-hover:bg-primary/10 transition-colors duration-300">
+                            <div className="shrink-0 p-4 bg-surface-secondary rounded-xl group-hover:bg-primary/10 transition-colors duration-300">
                                 <Mail className="h-6 w-6 text-primary" />
                             </div>
                             <div className="ml-6">
@@ -48,19 +48,19 @@ export default function Contact() {
                                     Email Us
                                 </h3>
                                 <p className="text-muted-foreground font-light">
-                                    hello@dsourav.com
+                                    hello@sourav.dev
                                 </p>
                             </div>
                         </a>
 
                         {/* Twitter Contact */}
                         <a
-                            href="https://twitter.com/souravdotdev"
+                            href="https://x.com/souravdotdev"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-center p-6 bg-surface rounded-2xl border border-border-primary shadow-soft hover:shadow-lg hover:border-primary/30 transition-all duration-300"
                         >
-                            <div className="flex-shrink-0 p-4 bg-surface-secondary rounded-xl group-hover:bg-primary/10 transition-colors duration-300">
+                            <div className="shrink-0 p-4 bg-surface-secondary rounded-xl group-hover:bg-primary/10 transition-colors duration-300">
                                 <Twitter className="h-6 w-6 text-primary" />
                             </div>
                             <div className="ml-6">
@@ -75,12 +75,12 @@ export default function Contact() {
 
                         {/* GitHub Contact */}
                         <a
-                            href="https://github.com/souravdotdev"
+                            href="https://github.com/dsouravcom/insta-caption-extractor"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-center p-6 bg-surface rounded-2xl border border-border-primary shadow-soft hover:shadow-lg hover:border-primary/30 transition-all duration-300"
                         >
-                            <div className="flex-shrink-0 p-4 bg-surface-secondary rounded-xl group-hover:bg-primary/10 transition-colors duration-300">
+                            <div className="shrink-0 p-4 bg-surface-secondary rounded-xl group-hover:bg-primary/10 transition-colors duration-300">
                                 <Github className="h-6 w-6 text-primary" />
                             </div>
                             <div className="ml-6">
