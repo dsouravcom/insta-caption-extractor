@@ -37,15 +37,73 @@ export default function Navbar() {
     ];
 
     return (
-        <>
-            <nav className="sticky top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-border-primary shadow-sm">
+        <div className="sticky top-0 z-50 w-full">
+            {/* Elegant Modern SaaS Announcement Banner */}
+            <div className="relative overflow-hidden bg-zinc-950 border-b border-white/5 py-2.5">
+                {/* Full-area shine effect */}
+                <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+                    <div className="absolute inset-0 w-[50%] h-full bg-linear-to-r from-transparent via-white/8 to-transparent animate-shine" />
+                </div>
+
+                {/* Subtle animated background pulse */}
+                <div className="absolute inset-0 bg-linear-to-r from-primary/5 via-transparent to-primary/5 animate-pulse" />
+
+                <div className="max-w-7xl mx-auto px-4 relative flex items-center justify-center">
+                    <a
+                        href="https://www.reelsload.com/?ref=caption.dsourav.com"
+                        target="_blank"
+                        rel="follow"
+                        className="group flex items-center gap-3 text-white transition-all duration-300"
+                    >
+                        <div className="flex items-center gap-2 bg-white/10 border border-white/20 px-2 py-0.5 rounded-md">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                            </span>
+                            <span className="text-[10px] font-bold tracking-wider uppercase text-white">
+                                New
+                            </span>
+                        </div>
+
+                        <p className="text-[11px] sm:text-xs font-medium tracking-tight text-zinc-300 group-hover:text-white transition-colors">
+                            Need high-quality downloads?{" "}
+                            <span className="text-white font-bold underline decoration-white/30 underline-offset-4">
+                                Try our Pro Instagram Reels Downloader
+                            </span>
+                        </p>
+
+                        <div className="flex items-center gap-1.5 ml-1">
+                            <span className="h-4 w-px bg-white/10 hidden sm:block" />
+                            <span className="text-[10px] text-zinc-500 hidden sm:block group-hover:text-zinc-300 transition-colors">
+                                reelsload.com
+                            </span>
+                            <div className="flex items-center justify-center w-5 h-5 rounded-full bg-white/5 group-hover:bg-white group-hover:text-zinc-950 transition-all duration-300">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="w-3 h-3"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M7 17l10-10M7 7h10v10" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <nav className="bg-surface/95 backdrop-blur-md border-b border-border-primary shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
                         {/* Logo */}
                         <div className="flex items-center gap-2 md:gap-3 ">
                             <Link
                                 href="/"
-                            className="flex items-center gap-2 md:gap-3 z-50"
+                                className="flex items-center gap-2 md:gap-3 z-50"
                                 onClick={closeMenu}
                             >
                                 <div className="relative w-7 h-7 md:w-9 md:h-9 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
@@ -113,7 +171,7 @@ export default function Navbar() {
                     className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
                         isOpen ? "opacity-100 visible" : "opacity-0 invisible"
                     }`}
-                    style={{ top: "64px" }}
+                    style={{ top: "calc(64px + 41px)" }}
                 >
                     {/* Backdrop */}
                     <div
@@ -155,6 +213,6 @@ export default function Navbar() {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 }

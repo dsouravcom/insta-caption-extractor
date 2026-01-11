@@ -24,6 +24,17 @@
   --font-serif: var(--font-playfair);
   
   --shadow-soft: var(--shadow-lg);
+
+  --animate-shine: shine 5s infinite;
+
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%) skewX(-15deg);
+    }
+    100% {
+      transform: translateX(200%) skewX(-15deg);
+    }
+  }
 }
 
 :root {
