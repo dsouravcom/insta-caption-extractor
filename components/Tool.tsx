@@ -63,13 +63,10 @@ export default function Tool() {
         setError("");
         setCaption("");
         try {
-            const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API_URL}`,
-                {
-                    url: instagramUrl,
-                    token: turnstileToken,
-                }
-            );
+            const response = await axios.post("/api/caption", {
+                url: instagramUrl,
+                token: turnstileToken,
+            });
             const string = response.data.caption;
             const result = string.slice(2, string.length - 1);
             setCaption(result);
