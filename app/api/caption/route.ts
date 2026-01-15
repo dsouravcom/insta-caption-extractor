@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Disable caching for this route - ensures fresh API calls every time
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 /**
  * POST /api/caption
  * Proxy endpoint to hide the actual backend API URL from the client
@@ -36,6 +40,7 @@ export async function POST(request: NextRequest) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ url, token }),
+            cache: "no-store", // Disable caching - always fetch fresh data
         });
 
         // Get the response data
